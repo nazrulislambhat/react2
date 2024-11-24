@@ -17,24 +17,9 @@ function UseState() {
       <h1>useState Counter</h1>
       <div className="">
         <p className="text-8xl text-red-600 flex-1">{count}</p>
-        <button
-          onClick={handleInc}
-          className="px-8 bg-red-500 text-black text-4xl py-2 border-2 rounded border-black pointer flex-1"
-        >
-          +
-        </button>
-        <button
-          onClick={handleDec}
-          className="px-8 text-4xl bg-blue-500 py-2 border-2 rounded border-black pointer"
-        >
-          -
-        </button>
-        <button
-          onClick={handleReset}
-          className="px-8 text-4xl bg-green-500 py-2 border-2 rounded border-black pointer"
-        >
-          Reset
-        </button>
+        <button onClick={handleInc}>+</button>
+        <button onClick={handleDec}>-</button>
+        <button onClick={handleReset}>Reset</button>
       </div>
     </div>
   );
