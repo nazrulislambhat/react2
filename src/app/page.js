@@ -1,18 +1,49 @@
 'use client';
-import UseState from './ components/UseState';
+
+import { useState, useEffect } from 'react';
+
 import UseReducer from './ components/UseReducer';
-import UseRef from './ components/UseRef';
-import UseRef2 from './ components/UseRef2';
-import BooleanCustomHook from './ components/BooleanCustomHook';
-export default function Home() {
+import ContextExample from './ components/ContextExample';
+import L1 from './ components/L1';
+import { some } from './ components/SomeContext';
+export default function App() {
+  const username = 'nazrul';
+  // const [data, setData] = useState([]);
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         'https://jsonplaceholder.typicode.com/posts'
+  //       );
+  //       const result = await response.json();
+  //       setData(result);
+  //       setLoading(false);
+  //     } catch (error) {
+  //       console.error('Error Fetching', error);
+  //       setLoading(false);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []); //will run only once
   return (
     <div>
-      <h1 className="text-6xl">React JS 2.0</h1>
-      <UseState />
-      <UseReducer />
-      <UseRef />
-      <UseRef2 />
-      <BooleanCustomHook />
+      <h1>Data Fetcher</h1>
+      {/* <UseReducer />
+      <ContextExample /> */}
+      <some.Provider value={username}>
+        <L1 />
+      </some.Provider>
+      {/* {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <ul>
+          {data.map((item) => (
+            <li key={item.id}>{item.title}</li>
+          ))}
+        </ul>
+      )} */}
     </div>
   );
 }

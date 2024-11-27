@@ -1,28 +1,29 @@
 import { useReducer } from 'react';
+const initialState = {
+  count: 0,
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'increment':
+    case 'I':
       return { count: state.count + 1 };
-    case 'decrement':
+    case 'D':
       return { count: state.count - 1 };
-    case 'reset':
+    case 'R':
       return { count: 0 };
-
     default:
-      throw new Error('Unknown Action Type');
+      throw new Error();
   }
 };
-
 function UseReducer() {
-  const initialState = { count: 0 };
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <div>
-      <p className="text-8xl text-red-600 flex-1">{state.count}</p>
-      <button onClick={() => dispatch({ type: 'increment' })}>+</button>
-      <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
-      <button onClick={() => dispatch({ type: 'reset' })}>Reset</button>
+      UseReducer
+      <p>{state.count}</p>
+      <button onClick={() => dispatch({ type: 'I' })}>I</button>
+      <button onClick={() => dispatch({ type: 'D' })}>D</button>
+      <button onClick={() => dispatch({ type: 'R' })}>R</button>
     </div>
   );
 }

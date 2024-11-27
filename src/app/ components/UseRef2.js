@@ -7,7 +7,7 @@ function UseRef2() {
   const startTimer = () => {
     if (!timerRef.current) {
       timerRef.current = setInterval(() => {
-        setCount((prevCount) => prevCount + 17);
+        setCount((prevCount) => prevCount + 100);
       }, 1);
     }
   };
